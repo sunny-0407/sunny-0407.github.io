@@ -12,5 +12,14 @@
     <div class="content" style="margin-left:300px;">
         contens 영역<br>
     </div>
+    <script>
+        $(function(){
+          var includes = $('[data-include]');
+          jQuery.each(includes, function(){
+            var file = '/inc/' + $(this).data('include') + '.html';
+            $(this).load(file);
+          });
+        });
+      </script>
 </body>
 </html>
