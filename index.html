@@ -1,33 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Document</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/base.css" type="text/css" />
-    <title>Document</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+          var includes = $('[data-include]');
+          jQuery.each(includes, function(){
+            var file = 'inc/' + $(this).data('include') + '.html';
+            $(this).load(file);
+          });
+        });
+      </script>
 </head>
 <body>
-    <div style="height:100%;width:300px;position: fixed;left:0;top:0;background:#efefef;overflow-y: auto;">
-        <div class="profile" style="width:150px;height:150px;margin:100px auto 30px;"><img src="/img/html.png" alt="" style="width:100%;" /></div>
-        <h2>git</h2>
-        <ul>
-            <li>기본 명령어</li>
-            <li>GRID BOX</li>
-        </ul>
-        <h2>FLEX/GRID BOX</h2>
-        <ul>
-            <li>FLEX BOX</li>
-            <li>GRID BOX</li>
-        </ul>
-        <h2>ANIMATION</h2>
-        <ul>
-            <li>animation</li>
-            <li>transition</li>
-            <li>keyframes</li>
-        </ul>
-        <h2>javascript</h2>
-        <h2>React</h2>
-    </div>
+    <div data-include="inc_lnb"></div>
     <div class="content" style="margin-left:300px;">
         contens 영역<br>
     </div>
